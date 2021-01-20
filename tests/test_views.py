@@ -4,7 +4,7 @@ from django.http.response import Http404
 from django.test import RequestFactory
 
 from django_templated.users.models import User
-from django_templated.users.tests.factories import UserFactory
+from tests.factories import UserFactory
 from django_templated.users.views import (
     UserRedirectView,
     UserUpdateView,

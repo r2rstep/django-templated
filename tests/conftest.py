@@ -1,7 +1,7 @@
 import pytest
 
 from django_templated.users.models import User
-from django_templated.users.tests.factories import UserFactory
+from tests.factories import UserFactory
 
 
 @pytest.fixture(autouse=True)
