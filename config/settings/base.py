@@ -1,6 +1,7 @@
 """
 Base settings to build other settings files upon.
 """
+import os
 from pathlib import Path
 
 import environ
@@ -40,7 +41,14 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {"default": {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
+    }}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
