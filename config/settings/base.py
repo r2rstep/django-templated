@@ -80,6 +80,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "django_templated.users.apps.UsersConfig",
+    "django_templated.items.apps.ItemsConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
