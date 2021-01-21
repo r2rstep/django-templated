@@ -8,5 +8,5 @@ from django_templated.items.views import (
 app_name = "items"
 urlpatterns = [
     path("~update/", view=item_update_view, name="update"),
-    path("<str:username>/", view=item_detail_view, name="detail"),
+    path("<str:name>/", view=item_detail_view, name="detail"),
 ]

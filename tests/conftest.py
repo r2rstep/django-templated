@@ -1,7 +1,8 @@
 import pytest
 
 from django_templated.users.models import User
-from tests.factories import UserFactory
+from django_templated.items.models import Item
+from tests.factories import UserFactory, ItemFactory
 
 
 @pytest.fixture(autouse=True)
@@ -12,3 +13,8 @@ def media_storage(settings, tmpdir):
 @pytest.fixture
 def user() -> User:
     return UserFactory()
+
+
+@pytest.fixture
+def item() -> Item:
+    return ItemFactory()
