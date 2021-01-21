@@ -25,7 +25,7 @@ class ItemUpdateView(UpdateView):
         return reverse("items:detail", kwargs={"name": self.request.item.name})
 
     def get_object(self):
-        return Item.objects.get(username=self.request.item.name)
+        return Item.objects.get(name=self.request.item.name)
 
     def form_valid(self, form):
         messages.add_message(

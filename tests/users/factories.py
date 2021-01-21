@@ -1,11 +1,8 @@
 from typing import Any, Sequence
-import random
 
 from django.contrib.auth import get_user_model
 from factory import Faker, post_generation
 from factory.django import DjangoModelFactory
-
-from django_templated.items.models import Item
 
 
 class UserFactory(DjangoModelFactory):
@@ -33,12 +30,3 @@ class UserFactory(DjangoModelFactory):
     class Meta:
         model = get_user_model()
         django_get_or_create = ["username"]
-
-
-class ItemFactory(DjangoModelFactory):
-
-    name = Faker("name")
-    prop = random.randint(0, 100)
-
-    class Meta:
-        model = Item
